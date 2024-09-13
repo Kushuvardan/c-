@@ -902,3 +902,127 @@ int main() {
     cout << "The sum of the digits is " << sum << endl;
     return 0;
 }
+20. Write a program to read in an integer and determine if it is a palindrome or not using a while loop.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int num, originalNum, reversedNum = 0, remainder;
+
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    originalNum = num;
+
+    while (num > 0) {
+        remainder = num % 10;
+        reversedNum = reversedNum * 10 + remainder;
+        num /= 10;
+    }
+
+    if (originalNum == reversedNum) {
+        cout << originalNum << " is a palindrome." << endl;
+    } else {
+        cout << originalNum << " is not a palindrome." << endl;
+    }
+
+    return 0;
+}
+
+17. Write a program to read in an integer and determine if it is a prime number or not using a for loop.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    if (num <= 1) {
+        cout << num << " is not a prime number." << endl;
+    } else {
+        bool isPrime = true;
+        for (int i = 2; i <= num / 2; ++i) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            cout << num << " is a prime number." << endl;
+        } else {
+            cout << num << " is not a prime number." << endl;
+        }
+    }
+
+    return 0;
+}
+
+18. Write a program to read in an integer and print the Fibonacci series up to that number using a for loop.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int limit;
+    cout << "Enter an integer as the limit for the Fibonacci series: ";
+    cin >> limit;
+
+    if (limit < 0) {
+        cout << "Please enter a non-negative integer." << endl;
+    } else {
+        int a = 0, b = 1;
+        cout << "Fibonacci series up to " << limit << ": ";
+        cout << a;
+        if (limit > 0) {
+            cout << " " << b;
+        }
+
+        for (int next = a + b; next <= limit; next = a + b) {
+            cout << " " << next;
+            a = b;
+            b = next;
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
+
+15. Write a program to read in an integer and print the multiplication table for that number using a for loop.
+	#include <iostream>
+using namespace std;
+int main() {
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+    cout << "Multiplication table for " << number << " is:" << endl;
+    for (int i = 1; i <= 10; ++i) {
+        cout << number << " * " << i << " = " << (number * i) << endl;
+    }
+    return 0;
+}
+16. Write a program to read in an integer and print the factorial of that number using a for loop.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    if (num < 0) {
+        cout << "Factorial is not defined for negative numbers." << endl;
+    } else {
+        unsigned long long factorial = 1;
+        for (int i = 1; i <= num; ++i) {
+            factorial *= i;
+        }
+        cout << "The factorial of " << num << " is " << factorial << endl;
+    }
+
+    return 0;
+}
+
+14. Write a program to print the numbers from 1 to 10 using a for loop.
+	
