@@ -1181,4 +1181,1360 @@ int main() {
 
     return 0;
 }
+4. Write a program to read in two floating-point numbers and perform the following operations on them: addition, subtraction, multiplication, and division.
+#include <iostream>
+using namespace std;
 
+int main() {
+    float num1, num2;
+    cout << "Enter the first floating-point number: ";
+    cin >> num1;
+    cout << "Enter the second floating-point number: ";
+    cin >> num2;
+
+    float addition = num1 + num2;
+    float subtraction = num1 - num2;
+    float multiplication = num1 * num2;
+    string division = (num2 != 0) ? to_string(num1 / num2) : "undefined";
+
+    cout << "Addition: " << addition << endl;
+    cout << "Subtraction: " << subtraction << endl;
+    cout << "Multiplication: " << multiplication << endl;
+    cout << "Division: " << division << endl;
+
+    return 0;
+}
+5. Write a program to read in an integer and determine if it is even or odd.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+
+    if (number % 2 == 0) {
+        cout << number << " is even." << endl;
+    } else {
+        cout << number << " is odd." << endl;
+    }
+
+    return 0;
+}
+3. Write a program to read in two integers and determine if they are equal or not.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2;
+    cout << "Enter the first integer: ";
+    cin >> num1;
+    cout << "Enter the second integer: ";
+    cin >> num2;
+
+    if (num1 == num2) {
+        cout << "The numbers are equal." << endl;
+    } else {
+        cout << "The numbers are not equal." << endl;
+    }
+
+    return 0;
+}
+1. Write a program to read in two integers and perform the following operations on them: addition, subtraction, multiplication, division, and modulo.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2;
+    cout << "Enter the first integer: ";
+    cin >> num1;
+    cout << "Enter the second integer: ";
+    cin >> num2;
+
+    int addition = num1 + num2;
+    int subtraction = num1 - num2;
+    int multiplication = num1 * num2;
+    double division = (num2 != 0) ? static_cast<double>(num1) / num2 : 0;
+    int modulo = (num2 != 0) ? num1 % num2 : 0;
+
+    cout << "Addition: " << addition << endl;
+    cout << "Subtraction: " << subtraction << endl;
+    cout << "Multiplication: " << multiplication << endl;
+    if (num2 != 0) {
+        cout << "Division: " << division << endl;
+        cout << "Modulo: " << modulo << endl;
+    } else {
+        cout << "Division: undefined (division by zero)" << endl;
+        cout << "Modulo: undefined (division by zero)" << endl;
+    }
+
+    return 0;
+}
+2. Write a program to read in three integers and compute the average of the three numbers. Use the assignment operator to store the result in a variable.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, num3;
+    cout << "Enter the first integer: ";
+    cin >> num1;
+    cout << "Enter the second integer: ";
+    cin >> num2;
+    cout << "Enter the third integer: ";
+    cin >> num3;
+
+    double average = (num1 + num2 + num3) / 3.0;
+
+    cout << "The average of the three numbers is: " << average << endl;
+
+    return 0;
+}
+42. Write a function to check if a given string is a palindrome or not.
+	#include <iostream>
+#include <string>
+#include <cctype> 
+
+bool isPalindrome(const std::string& str) {
+    std::string normalizedStr;
+    
+   
+    for (char ch : str) {
+        if (std::isalnum(ch)) {
+            normalizedStr += std::tolower(ch);
+        }
+    }
+
+   
+    std::string reversedStr = std::string(normalizedStr.rbegin(), normalizedStr.rend());
+    return normalizedStr == reversedStr;
+}
+
+int main() {
+    std::string inputString;
+    
+ 
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, inputString);
+ 
+    if (isPalindrome(inputString)) {
+        std::cout << "\"" << inputString << "\" is a palindrome." << std::endl;
+    } else {
+        std::cout << "\"" << inputString << "\" is not a palindrome." << std::endl;
+    }
+
+    return 0;
+}
+43. Write a function to calculate the area of a circle given its radius.
+#include <iostream>
+#include <cmath>
+
+
+double calculateAreaOfCircle(double radius) {
+    if (radius < 0) {
+        std::cerr << "Radius cannot be negative." << std::endl;
+        return -1; 
+    }
+    return M_PI * radius * radius; 
+}
+
+int main() {
+    double radius;
+
+   
+    std::cout << "Enter the radius of the circle: ";
+    std::cin >> radius;
+
+    double area = calculateAreaOfCircle(radius);
+
+
+    if (area >= 0) {
+        std::cout << "The area of the circle with radius " << radius << " is: " << area << std::endl;
+    }
+
+    return 0;
+}
+44. Write a function to convert a given temperature from Celsius to Fahrenheit.
+	#include <iostream>
+double celsiusToFahrenheit(double celsius) {
+    return (9.0 / 5.0) * celsius + 32; 
+}
+int main() {
+    double celsius;
+    std::cout << "Enter temperature in Celsius: ";
+    std::cin >> celsius;
+    double fahrenheit = celsiusToFahrenheit(celsius);
+    std::cout << celsius << " degrees Celsius is equal to " << fahrenheit << " degrees Fahrenheit." << std::endl;
+
+    return 0;
+}
+40. Write a function to count the number of words in a given string.
+#include <iostream>
+#include <sstream> 
+#include <string>
+int countWords(const std::string& str) {
+    std::istringstream stream(str);
+    std::string word;
+    int count = 0;
+    while (stream >> word) {
+        count++;
+    }
+    return count;
+}
+
+int main() {
+    std::string inputString;
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, inputString);
+    int wordCount = countWords(inputString);
+    std::cout << "The number of words in the given string is: " << wordCount << std::endl;
+    return 0;
+}
+41. Write a function to find the minimum and maximum elements in a given array.
+	#include <iostream>
+#include <limits> 
+
+
+void findMinMax(int arr[], int size, int& min, int& max) {
+   
+    min = arr[0];
+    max = arr[0];
+
+   
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+}
+
+int main() {
+    int size;
+    std::cout << "Enter the size of the array: ";
+    std::cin >> size;
+    int arr[size];
+    std::cout << "Enter the elements of the array:\n";
+    for (int i = 0; i < size; i++) {
+        std::cin >> arr[i];
+    }
+    int min = std::numeric_limits<int>::max();
+    int max = std::numeric_limits<int>::min();
+    findMinMax(arr, size, min, max);
+    std::cout << "Minimum element: " << min << std::endl;
+    std::cout << "Maximum element: " << max << std::endl;
+
+    return 0;
+}
+39. Write a function to reverse a given string.
+	#include <iostream>
+#include <string>
+
+
+std::string reverseString(const std::string& str) {
+    std::string reversedStr; 
+
+    
+    for (int i = str.length() - 1; i >= 0; i--) {
+        reversedStr += str[i]; 
+    }
+
+    return reversedStr; 
+}
+
+int main() {
+    std::string inputString;
+
+  
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, inputString);
+
+  
+    std::string reversedString = reverseString(inputString);
+
+   
+    std::cout << "Reversed string: " << reversedString << std::endl;
+
+    return 0;
+}
+37. Write a function to determine if a given integer is a prime number or not.
+	#include <iostream>
+
+
+bool isPrime(int number) {
+    
+    if (number <= 1) {
+        return false; 
+    }
+
+    
+    for (int i = 2; i * i <= number; i++) {
+        if (number % i == 0) {
+            return false; 
+        }
+    }
+
+    return true; 
+}
+
+int main() {
+    int inputNumber;
+
+    std::cout << "Enter an integer: ";
+    std::cin >> inputNumber;
+
+    
+    if (isPrime(inputNumber)) {
+        std::cout << inputNumber << " is a prime number." << std::endl;
+    } else {
+        std::cout << inputNumber << " is not a prime number." << std::endl;
+    }
+
+    return 0;
+}
+38. Write a function to determine the GCD (greatest common divisor) of two given integers.
+#include <iostream>
+
+
+int gcd(int a, int b) {
+    
+    a = std::abs(a);
+    b = std::abs(b);
+
+  
+    while (b != 0) {
+        int temp = b;
+        b = a % b; 
+        a = temp; 
+    }
+    
+    return a; 
+}
+36. Write a function to compute the factorial of a given integer.
+	#include <iostream>
+
+unsigned long long factorial(int n) {
+    if (n < 0) {
+        std::cerr << "Factorial is not defined for negative numbers." << std::endl;
+        return 0; 
+    }
+
+    unsigned long long result = 1; 
+
+    for (int i = 1; i <= n; i++) {
+        result *= i; 
+    }
+
+    return result; 
+}
+
+int main() {
+    int inputNumber;
+
+    std::cout << "Enter a non-negative integer: ";
+    std::cin >> inputNumber;
+
+    
+    unsigned long long result = factorial(inputNumber);
+
+    
+    if (inputNumber >= 0) {
+        std::cout << "The factorial of " << inputNumber << " is: " << result << std::endl;
+    }
+
+    return 0;
+}
+
+
+int main() {
+    int num1, num2;
+
+    
+    std::cout << "Enter two integers: ";
+    std::cin >> num1 >> num2;
+
+   
+    int result = gcd(num1, num2);
+
+   
+    std::cout << "The GCD of " << num1 << " and " << num2 << " is: " << result << std::endl;
+
+    return 0;
+}
+261.Power Function: Implement a function to calculate the power of a number raised to an exponent.
+	#include <iostream>
+using namespace std;
+
+double power(double base, int exponent) {
+    double result = 1.0;
+    bool isNegativeExponent = (exponent < 0);
+    
+    if (isNegativeExponent) {
+        exponent = -exponent;
+    }
+
+    for (int i = 0; i < exponent; i++) {
+        result *= base;
+    }
+
+    return isNegativeExponent ? (1.0 / result) : result;
+}
+
+int main() {
+    double base;
+    int exponent;
+
+    cout << "Enter the base: ";
+    cin >> base;
+
+    cout << "Enter the exponent: ";
+    cin >> exponent;
+
+    double result = power(base, exponent);
+
+    cout << base << " raised to the power of " << exponent << " is: " << result << endl;
+
+    return 0;
+}
+260.Greatest Common Divisor (GCD): Create a function to find the GCD of two numbers using the Euclidean algorithm.
+Use Inline function
+#include <iostream>
+using namespace std;
+
+inline int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int num1, num2;
+
+    cout << "Enter two integers: ";
+    cin >> num1 >> num2;
+
+    int result = gcd(num1, num2);
+
+    cout << "The GCD of " << num1 << " and " << num2 << " is: " << result << endl;
+
+    return 0;
+}
+274.Number Pattern Generator: Create a function to generate different number patterns, such as a pyramid, diamond, or Pascal's triangle.
+#include <iostream>
+using namespace std;
+
+void printRightAngleTriangle(int n) {
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= i; ++j) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+}
+
+void printPyramid(int n) {
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= n - i; ++j) {
+            cout << " ";
+        }
+        for (int k = 1; k <= 2 * i - 1; ++k) {
+            cout << k << " ";
+        }
+        cout << endl;
+    }
+}
+
+void printDiamond(int n) {
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= n - i; ++j) {
+            cout << " ";
+        }
+        for (int k = 1; k <= 2 * i - 1; ++k) {
+            cout << k << " ";
+        }
+        cout << endl;
+    }
+    for (int i = n - 1; i >= 1; --i) {
+        for (int j = 1; j <= n - i; ++j) {
+            cout << " ";
+        }
+        for (int k = 1; k <= 2 * i - 1; ++k) {
+            cout << k << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int choice, n;
+
+    cout << "Choose a pattern to generate:\n";
+    cout << "1. Right-Angle Triangle\n";
+    cout << "2. Pyramid\n";
+    cout << "3. Diamond\n";
+    cout << "Enter your choice (1, 2, or 3): ";
+    cin >> choice;
+
+    cout << "Enter the number of rows: ";
+    cin >> n;
+
+    switch (choice) {
+        case 1:
+            printRightAngleTriangle(n);
+            break;
+        case 2:
+            printPyramid(n);
+            break;
+        case 3:
+            printDiamond(n);
+            break;
+        default:
+            cout << "Invalid choice!" << endl;
+            break;
+    }
+
+    return 0;
+}
+266.Sum of Array Elements: Create a function to calculate the sum of elements in an array.
+	#include <iostream>
+using namespace std;
+
+ 
+int sumOfArray(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i]; 
+    }
+    return sum; 
+}
+
+int main() {
+    int size;
+
+    cout << "Enter the number of elements in the array: ";
+    cin >> size;
+
+    int arr[size];
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < size; i++) {
+        cin >> arr[i]; 
+    }
+
+    int totalSum = sumOfArray(arr, size); 
+    cout << "The sum of the array elements is: " << totalSum << endl;
+
+    return 0;
+}
+264.String Reversal: Design a function that reverses a given string.
+	#include <iostream>
+#include <string>
+using namespace std;
+
+
+string reverseString(string str) {
+    string reversedStr;
+    
+    for (int i = str.length() - 1; i >= 0; i--) {
+        reversedStr += str[i];
+    }
+    
+    return reversedStr;
+}
+
+int main() {
+    string inputString;
+    81. Write a C++ program to create a class for a rectangle with a constructor and a destructor.
+	    #include <iostream>
+
+class Rectangle {
+private:
+    double length;
+    double width;
+
+public:
+
+    Rectangle(double l, double w) : length(l), width(w) {
+        std::cout << "Rectangle created with length " << length << " and width " << width << std::endl;
+    }
+
+    ~Rectangle() {
+        std::cout << "Rectangle destroyed with length " << length << " and width " << width << std::endl;
+    }
+
+    double area() const {
+        return length * width;
+    }
+
+    double perimeter() const {
+        return 2 * (length + width);
+    }
+
+    void displayInfo() const {
+        std::cout << "Rectangle Info: Length = " << length << ", Width = " << width 
+                  << ", Area = " << area() << ", Perimeter = " << perimeter() << std::endl;
+    }
+};
+
+int main() {
+    Rectangle rect(5.0, 3.0);
+    rect.displayInfo();
+
+    return 0;
+}
+    cout << "Enter a string: ";
+    getline(cin, inputString);
+    
+    string result = reverseString(inputString);
+    
+    cout << "Original string: " << inputString << endl;
+    cout << "Reversed string: " << result << endl;
+    
+    return 0;
+}
+78. Write a C++ program to overload a function to find the absolute value of an integer number and the absolute value of a floating-point number separately.
+	#include<iostream>
+using namespace std;
+int absolute(int num)
+{
+  return (num<0)? -num:num;
+}
+double absolute(double num)
+{
+  return(num<0.0)? -num:num;
+}
+int main()
+{
+  int numb1=-10;
+  double numb2=-20.5;
+  cout<<"absolute value of integer:\n"<<numb1<<absolute(numb1)<<endl;
+  cout<<"absolute value of floating:\n"<<numb2<<absolute(numb2)<<endl;
+  return 0;
+}
+77. Write a C++ program to overload a function to calculate the power of an integer number and the power of a floating-point number separately.
+	#include<iostream>
+#include<cmath>
+using namespace std;
+int power(int base,int exponent)
+{
+  int result=1,i;
+  for(i=0;i<exponent;i++)
+  {
+    result *=base;
+  }
+  return result;
+}
+double power(double base,double exponent)
+{
+  return pow(base,exponent);
+}
+int main()
+{
+int intBase=2,intExponent=3;
+double doubleBase=2.5,doubleExponent=3.5;
+  cout<<"power of integer:\n"<<intBase<<","<<intExponent<<":"<<power(intBase,intExponent)<<endl;
+  cout<<"power of double:\n"<<doubleBase<<","<<doubleExponent<<":"<<power(doubleBase,doubleExponent)<<endl;
+  return 0;
+}
+76. Write a C++ program to overload a function to sort an integer array and a double array separately.
+	#include <iostream>
+using namespace std;
+void swap(int& a, int& b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+void swap(double& a, double& b)
+{
+    double temp = a;
+    a = b;
+    b = temp;
+}
+void sortArray(int arr[], int size)
+{
+    for (int i = 0; i < size - 1; i++)
+    {
+        for (int j = i + 1; j < size; j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                swap(arr[i], arr[j]);
+            }
+        }
+    }
+}
+void sortArray(double arr[], int size)
+{
+    for (int i = 0; i < size - 1; i++)
+    {
+        for (int j = i + 1; j < size; j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                swap(arr[i], arr[j]);
+            }
+        }
+    }
+}
+void printArray(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+void printArray(double arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+int main()
+{
+int intArr[] = {5, 2, 8, 3, 1};
+    int intSize = sizeof(intArr) / sizeof(intArr[0]);
+    double doubleArr[] = {5.5, 2.2, 8.8, 3.3, 1.1};
+    int doubleSize = sizeof(doubleArr) / sizeof(doubleArr[0]);
+    cout << "Original integer array: ";
+    printArray(intArr, intSize);
+    sortArray(intArr, intSize);
+    cout << "Sorted integer array: ";
+    printArray(intArr, intSize);
+    cout << "Original double array: ";
+    printArray(doubleArr, doubleSize);
+    sortArray(doubleArr, doubleSize);
+    cout << "Sorted double array: ";
+    printArray(doubleArr, doubleSize);
+    return 0;
+}
+75. Write a C++ program to overload a function to find the factorial of an integer number and the factorial of a floating-point number separately.
+	#include <iostream>
+using namespace std;
+int factorial(int num)
+{
+    int result = 1;
+    for (int i = 1; i <= num; i++)
+    {
+        result *= i;
+    }
+    return result;
+}
+double factorial(double num)
+{
+    int intPart = static_cast<int>(num);  
+    double result = 1;
+    for (int i = 1; i <= intPart; i++)
+    {
+        result *= i;
+    }
+    return result;
+}
+int main()
+{
+    int intNum = 5;
+    double doubleNum = 4.8;
+    cout << "Factorial of " << intNum << " (int) is: " << factorial(intNum) << endl;
+    cout << "Factorial of " << doubleNum << " (double) is: " << factorial(doubleNum) << endl;
+    return 0;
+}
+74. Write a C++ program to overload a function to print the contents of an integer array, a double array, and a character array separately.
+	#include <iostream>
+using namespace std;
+void printArray(int arr[], int size)
+{
+    cout << "Integer array: ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+void printArray(double arr[], int size)
+{
+    cout << "Double array: ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+void printArray(char arr[], int size)
+{
+    cout << "Character array: ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+int main()
+{
+    int intArray[] = {1, 2, 3, 4, 5};
+    double doubleArray[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+    char charArray[] = {'a', 'b', 'c', 'd', 'e'};
+    int intSize = sizeof(intArray) / sizeof(intArray[0]);
+    int doubleSize = sizeof(doubleArray) / sizeof(doubleArray[0]);
+    int charSize = sizeof(charArray) / sizeof(charArray[0]);
+    printArray(intArray, intSize);
+    printArray(doubleArray, doubleSize);
+    printArray(charArray, charSize);
+    return 0;
+}
+73. Write a C++ program to overload a function to calculate the sum of two matrices and two arrays separately.
+	#include <iostream>
+using namespace std;
+void addMatrices(int a[3][3], int b[3][3], int result[3][3], int rows, int cols)
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            result[i][j] = a[i][j] + b[i][j];
+        }
+    }
+}
+void addArrays(int a[], int b[], int result[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        result[i] = a[i] + b[i];
+    }
+}
+void printMatrix(int matrix[3][3], int rows, int cols)
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+void printArray(int array[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << array[i] << " ";
+    }
+    cout << endl;
+}
+int main()
+{
+    int matrix1[3][3] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+    int matrix2[3][3] = { {9, 8, 7}, {6, 5, 4}, {3, 2, 1} };
+    int matrixResult[3][3];
+    int array1[] = {1, 2, 3, 4, 5};
+    int array2[] = {5, 4, 3, 2, 1};
+    int arrayResult[5];
+    int arraySize = sizeof(array1) / sizeof(array1[0]);
+    addMatrices(matrix1, matrix2, matrixResult, 3, 3);
+    addArrays(array1, array2, arrayResult, arraySize);
+    cout << "Sum of matrices:" << endl;
+    printMatrix(matrixResult, 3, 3);
+    cout << "Sum of arrays:" << endl;
+    printArray(arrayResult, arraySize);
+    return 0;
+}
+72. Write a C++ program to overload a function to calculate the area of a square, a rectangle, and a circle separately.
+	#include <iostream>
+#include <cmath>
+using namespace std;
+double area(double side)
+{
+    return side * side;
+}
+double area(double length, double width)
+{
+    return length * width;
+}
+double area(double radius, bool isCircle)
+{
+    if (isCircle) {
+        return M_PI * radius * radius; 
+    }
+    return 0.0;
+}
+int main() 
+{
+    double side = 5.0;
+    double length = 6.0;
+    double width = 4.0;
+    double radius = 3.0;
+    cout << "Area of the square: " << area(side) << endl;
+    cout << "Area of the rectangle: " << area(length, width) << endl;
+    cout << "Area of the circle: " << area(radius, true) << endl;
+    return 0;
+}
+71. Write a C++ program to overload a function to concatenate two strings and two character arrays separately.
+	#include <iostream>
+#include <cstring> 
+using namespace std;
+string concatenate(const string &str1, const string &str2)
+{
+    return str1 + str2;
+}
+void concatenate(char *result, const char *arr1, const char *arr2)
+{
+    strcpy(result, arr1);
+    strcat(result, arr2);
+}
+int main()
+{
+    string str1 = "Hello, ";
+    string str2 = "World!";
+    cout << "Concatenated string: "<< concatenate(str1, str2) << endl;
+    const int SIZE = 100; 
+    char arr1[] = "Hello, ";
+    char arr2[] = "World!";
+    char result[SIZE];
+    concatenate(result, arr1, arr2);
+    cout << "Concatenated character arrays: " << result << endl;
+    return 0;
+}
+70. Write a C++ program to overload a function to find the maximum value from two integer numbers, two floating-point numbers, and two characters separately.
+	#include <iostream>
+using namespace std;
+int findMax(int a, int b)
+{
+    return (a > b) ? a : b;
+}
+double findMax(double a, double b)
+{
+    return (a > b) ? a : b;
+}
+char findMax(char a, char b)
+{
+    return (a > b) ? a : b;
+}
+int main()
+{
+    int int1 = 5, int2 = 10;
+    double double1 = 3.14, double2 = 2.71;
+    char char1 = 'a', char2 = 'z';
+    cout << "Maximum of " << int1 << " and " << int2 << " is: " << findMax(int1, int2) << endl;
+    cout << "Maximum of " << double1 << " and " << double2 << " is: " << findMax(double1, double2) << endl;
+    cout << "Maximum of '" << char1 << "' and '" << char2 << "' is: '" << findMax(char1, char2) << "'" << endl;
+    return 0;
+}
+68. Write a C++ program to overload the += operator to add two objects of a user-defined class.
+	#include <iostream>
+using namespace std;
+class Vector {
+private:
+    int x, y;
+public:
+    Vector(int x = 0, int y = 0) : x(x), y(y) {}
+    Vector& operator+=(const Vector& other) {
+        x += other.x;
+        y += other.y;
+        return *this; 
+    }
+    void display() const
+    {
+        cout << "Vector(" << x << ", " << y << ")" << endl;
+    }
+};
+int main()
+{
+    Vector v1(1, 2);  
+    Vector v2(3, 4); 
+    cout << "Before addition:" << endl;
+    v1.display();
+    v2.display(); 
+    v1 += v2;
+    cout << "After addition:" << endl;
+    v1.display(); 
+    return 0;
+}
+69. Write a C++ program to overload a function to add two integer numbers and two floating-point numbers separately.
+	#include <iostream>
+using namespace std;
+int add(int a, int b)
+{
+    return a + b;
+}
+double add(double a, double b)
+{
+    return a + b;
+}
+int main()
+{
+    int int1 = 10, int2 = 20;
+    double double1 = 5.5, double2 = 4.5;
+    cout << "Sum of integers: " << add(int1, int2) << endl;
+    cout << "Sum of floating-point numbers: " << add(double1, double2) << endl;
+    return 0;
+}
+67. Write a C++ program to overload the - operator to subtract two complex numbers.
+	#include <iostream>
+using namespace std;
+class Complex {
+private:
+    float real;
+    float imag;
+public:
+    Complex(float r = 0, float i = 0) : real(r), imag(i) {}
+    Complex operator-(const Complex& other) const {
+        return Complex(real - other.real, imag - other.imag);
+    }
+    void display() const {
+        std::cout << real;
+        if (imag >= 0)
+            cout << " + " << imag << "i";
+        else
+            cout << " - " << -imag << "i";
+    }
+};
+int main() {
+    Complex c1(4.5, 2.3);
+    Complex c2(1.2, 0.8);
+    Complex result = c1 - c2;
+    cout << "Result of subtraction: ";
+    result.display();
+    return 0;
+}
+66. Write a C++ program to overload the () operator to call a function with arguments.
+#include <iostream>
+using namespace std;
+class Functor
+{
+public:
+    void operator()(int a, int b) const
+    {
+        cout << "Sum: " << a + b << endl;
+    }
+};
+int main()
+{
+    Functor func;
+    func(10, 20);
+    return 0;
+}
+64. Write a C++ program to overload the [] operator to access the elements of an array using an index.
+#include <iostream>
+#include <stdexcept>
+
+class MyArray {
+private:
+    int* data;
+    size_t size;
+
+public:
+    MyArray(size_t s) : size(s) {
+        data = new int[size];
+        for (size_t i = 0; i < size; ++i) {
+            data[i] = 0;
+        }
+    }
+
+    ~MyArray() {
+        delete[] data;
+    }
+
+    int& operator[](size_t index) {
+        if (index >= size) {
+            throw std::out_of_range("Index out of bounds");
+        }
+        return data[index];
+    }
+
+    const int& operator[](size_t index) const {
+        if (index >= size) {
+            throw std::out_of_range("Index out of bounds");
+        }
+        return data[index];
+    }
+
+    size_t getSize() const {
+        return size;
+    }
+};
+
+int main() {
+    try {
+        MyArray arr(5);
+
+        for (size_t i = 0; i < arr.getSize(); ++i) {
+            arr[i] = static_cast<int>(i * i);
+        }
+
+        for (size_t i = 0; i < arr.getSize(); ++i) {
+            std::cout << "arr[" << i << "] = " << arr[i] << std::endl;
+        }
+
+        std::cout << "arr[10] = " << arr[10] << std::endl;
+    } catch (const std::out_of_range& e) {
+        std::cerr << "Caught exception: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
+65. Write a C++ program to overload the * operator to multiply two matrices.
+#include <iostream>
+#include <vector>
+
+class Matrix {
+private:
+    std::vector<std::vector<int>> data;
+    int rows;
+    int cols;
+
+public:
+    Matrix(int r, int c) : rows(r), cols(c) {
+        data.resize(r, std::vector<int>(c, 0));
+    }
+
+    void setElement(int r, int c, int value) {
+        data[r][c] = value;
+    }
+
+    Matrix operator*(const Matrix& other) {
+        if (cols != other.rows) {
+            throw std::invalid_argument("Matrix dimensions do not match for multiplication.");
+        }
+        
+        Matrix result(rows, other.cols);
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < other.cols; ++j) {
+                for (int k = 0; k < cols; ++k) {
+                    result.data[i][j] += data[i][k] * other.data[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
+    void display() const {
+        for (const auto& row : data) {
+            for (const auto& elem : row) {
+                std::cout << elem << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
+};
+
+int main() {
+    Matrix A(2, 3);
+    A.setElement(0, 0, 1);
+    A.setElement(0, 1, 2);
+    A.setElement(0, 2, 3);
+    A.setElement(1, 0, 4);
+    A.setElement(1, 1, 5);
+    A.setElement(1, 2, 6);
+
+    Matrix B(3, 2);
+    B.setElement(0, 0, 7);
+    B.setElement(0, 1, 8);
+    B.setElement(1, 0, 9);
+    B.setElement(1, 1, 10);
+    B.setElement(2, 0, 11);
+    B.setElement(2, 1, 12);
+
+    Matrix C = A * B;
+
+    std::cout << "Matrix A:" << std::endl;
+    A.display();
+    std::cout << "Matrix B:" << std::endl;
+    B.display();
+    std::cout << "Matrix C (A * B):" << std::endl;
+    C.display();
+
+    return 0;
+}
+63. Write a C++ program to overload the == operator to compare two objects of a user-defined class.
+	#include <iostream>
+#include <string>
+
+class Person {
+private:
+    std::string name;
+    int age;
+
+public:
+    Person(const std::string& personName, int personAge) : name(personName), age(personAge) {}
+
+    bool operator==(const Person& other) const {
+        return (name == other.name) && (age == other.age);
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const Person& person);
+};
+
+std::ostream& operator<<(std::ostream& os, const Person& person) {
+    os << "Name: " << person.name << ", Age: " << person.age;
+    return os;
+}
+
+int main() {
+    std::string name1, name2;
+    int age1, age2;
+
+    std::cout << "Enter details for Person 1:" << std::endl;
+    std::cout << "Name: ";
+    std::getline(std::cin, name1);
+    std::cout << "Age: ";
+    std::cin >> age1;
+    std::cin.ignore(); 
+
+    std::cout << "Enter details for Person 2:" << std::endl;
+    std::cout << "Name: ";
+    std::getline(std::cin, name2);
+    std::cout << "Age: ";
+    std::cin >> age2;
+
+    Person p1(name1, age1);
+    Person p2(name2, age2);
+
+    std::cout << "Person 1: " << p1 << std::endl;
+    std::cout << "Person 2: " << p2 << std::endl;
+
+    if (p1 == p2) {
+        std::cout << "p1 is equal to p2." << std::endl;
+    } else {
+        std::cout << "p1 is not equal to p2." << std::endl;
+    }
+
+    return 0;
+}
+62. Write a C++ program to overload the << operator to print the contents of a user-defined class.
+#include <iostream>
+#include <string>
+
+class Person {
+private:
+    std::string name;
+    int age;
+
+public:
+    Person(const std::string& personName, int personAge) : name(personName), age(personAge) {}
+
+    friend std::ostream& operator<<(std::ostream& os, const Person& person);
+};
+
+std::ostream& operator<<(std::ostream& os, const Person& person) {
+    os << "Name: " << person.name << ", Age: " << person.age;
+    return os;
+}
+
+int main() {
+    Person p1("Alice", 25);
+    Person p2("Bob", 30);
+
+    std::cout << p1 << std::endl;
+    std::cout << p2 << std::endl;
+
+    return 0;
+}
+60. Write a C++ program to overload the + operator to add two complex numbers.
+	#include <iostream>
+
+class Complex {
+private:
+    double real;
+    double imag;
+
+public:
+    Complex(double r = 0, double i = 0) : real(r), imag(i) {}
+
+    Complex operator+(const Complex& other) {
+        return Complex(real + other.real, imag + other.imag);
+    }
+
+    void display() const {
+        std::cout << real << " + " << imag << "i" << std::endl;
+    }
+};
+
+int main() {
+    Complex c1(3.5, 2.5);
+    Complex c2(1.5, 4.5);
+
+    Complex c3 = c1 + c2; 
+
+    std::cout << "Complex Number 1: ";
+    c1.display();
+    
+    std::cout << "Complex Number 2: ";
+    c2.display();
+    
+    std::cout << "Sum: ";
+    c3.display();
+
+    return 0;
+}
+61. Write a C++ program to overload the ++ operator to increment a variable.
+	#include <iostream>
+
+class Counter {
+private:
+    int value;
+
+public:
+    Counter(int initialValue = 0) : value(initialValue) {}
+
+    Counter& operator++() {
+        ++value;
+        return *this;
+    }
+
+    Counter operator++(int) {
+        Counter temp = *this;
+        ++value;
+        return temp;
+    }
+
+    void display() const {
+        std::cout << "Counter Value: " << value << std::endl;
+    }
+};
+
+int main() {
+    Counter counter(5);
+
+    std::cout << "Initial ";
+    counter.display();
+
+    ++counter;
+    std::cout << "After prefix increment: ";
+    counter.display();
+
+    counter++;
+    std::cout << "After postfix increment: ";
+    counter.display();
+
+    return 0;
+}
+96. Write a C++ program to demonstrate the use of the throw keyword to throw an exception.
+	#include <iostream>
+#include <stdexcept>
+
+void divide(int numerator, int denominator) {
+    if (denominator == 0) {
+        throw std::runtime_error("Error: Division by zero is not allowed.");
+    }
+    std::cout << "Result: " << numerator / denominator << std::endl;
+}
+
+int main() {
+    try {
+        int num1 = 10;
+        int num2 = 0;
+
+       
+        divide(num1, num2);
+    } catch (const std::runtime_error& e) {
+        std::cerr << e.what() << std::endl;
+    }
+
+    std::cout << "Exiting program." << std::endl;
+    return 0;
+}
