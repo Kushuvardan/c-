@@ -1026,3 +1026,159 @@ int main() {
 
 14. Write a program to print the numbers from 1 to 10 using a for loop.
 	
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, sum = 0;
+    cout << "Enter a number: ";
+    cin >> N;
+
+    for (int i = 1; i <= N; i++) {
+        sum += i;
+    }
+
+    cout << "Sum of the first " << N << " natural numbers is: " << sum << endl;
+    return 0;
+}
+13.Write a program to read in an integer and determine if it is divisible by 3 or not using the ternary conditional operator.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    string result = (num % 3 == 0) ? "is divisible by 3." : "is not divisible by 3.";
+    cout << num << " " << result << endl;
+
+    return 0;
+}
+
+12. Write a program to read in two integers and determine if they are equal or not using the ternary conditional operator.
+	#include <iostream>
+using namespace std;
+int main() {
+    int a, b;
+    cout << "Enter the first integer: ";
+    cin >> a;
+    cout << "Enter the second integer: ";
+    cin >> b;
+    string result = (a == b) ? "The integers are equal." : "The integers are not equal.";
+    cout << result << endl;
+    return 0;
+}
+11. Write a program to read in three integers and determine which one is the maximum using the ternary conditional operator.
+	#include <iostream>
+using namespace std;
+int main() {
+    int a, b, c;
+    cout << "Enter the first integer: ";
+    cin >> a;
+    cout << "Enter the second integer: ";
+    cin >> b;
+    cout << "Enter the third integer: ";
+    cin >> c;
+    int max = (a >= b) ? ((a >= c) ? a : c) : ((b >= c) ? b : c);
+    cout << "The maximum value is: " << max << endl;
+    return 0;
+}
+9. Write a program to read in two integers and swap their values using the bitwise XOR operator.
+	#include <iostream>
+using namespace std;
+void swap(int& a, int& b) {
+    if (a != b) {
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+    }
+}
+int main() {
+    int x, y;
+    cout << "Enter first integer: ";
+    cin >> x;
+    cout << "Enter second integer: ";
+    cin >> y;
+    cout << "Before swapping:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+    swap(x, y);
+    cout << "After swapping:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+    return 0;
+}
+10. Write a program to read in a floating-point number and round it to the nearest integer using the floor and ceil functions.
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+    double num;
+    cout << "Enter a floating-point number: ";
+    cin >> num;
+    double floorValue = floor(num);
+    double ceilValue = ceil(num);
+    double roundedValue;
+    if ((num - floorValue) < (ceilValue - num)) {
+        roundedValue = floorValue;
+    } else {
+        roundedValue = ceilValue;
+    }
+    cout << "The number rounded to the nearest integer is: " << roundedValue << endl;
+    return 0;
+}
+8. Write a program to read in two integers and use the conditional operator to determine which number is greater.
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int a=5, b=10;
+    cout << "Enter the first integer: ";
+    cin >> a;
+    cout << "Enter the second integer: ";
+    cin >> b;
+    cout << "The greater number is: " 
+         << (a > b ? a : b) 
+         << endl;
+    return 0;
+}
+6. Write a program to read in an integer and determine if it is positive, negative, or zero.
+	#include <iostream>
+using namespace std;
+int main() {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
+    if (num > 0) {
+        cout << num << " The number is positive." << endl;
+    } else { if (num < 0) {
+        cout << num << " The number is negative." << endl;
+    } else {
+        cout << num << " The number is zero." << endl;
+    }
+    return 0;
+}
+}
+7. Write a program to read in a character and determine if it is a vowel or a consonant.
+	#include <iostream>
+using namespace std;
+
+int main() {
+    char ch;
+    cout << "Enter a single character: ";
+    cin >> ch;
+
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        char lower_ch = (ch >= 'A' && ch <= 'Z') ? ch + 'a' - 'A' : ch;
+        if (lower_ch == 'a' || lower_ch == 'e' || lower_ch == 'i' || lower_ch == 'o' || lower_ch == 'u') {
+            cout << ch << " is a vowel." << endl;
+        } else {
+            cout << ch << " is a consonant." << endl;
+        }
+    } else {
+        cout << ch << " is not an alphabetic character." << endl;
+    }
+
+    return 0;
+}
+
